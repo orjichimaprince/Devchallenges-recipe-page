@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&family=Outfit&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;1,800;1,900&family=Ruda:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&family=Outfit&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Ruda:wght@500&display=swap');
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0.7em;
+            /* margin: 0; */
+            padding: 0;
+            max-height: 100%;
+        }
+        
+        .classic {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            color: #000000;
+            font-size: 28px;
+            margin-top: 1em;
+            font-weight: 700;
+        }
+        
+        section {
+            font-family: 'Montserrat';
+            font-size: 14px;
+            line-height: 15px;
+            font-style: italic;
+            margin-block: 20px;
+            margin-left: 1.2em;
+            color: #4F4F4F;
+            width: fit-content;
+        }
+        
+        @media screen and (max-width: 640px) {
+            #img1 {
+                max-height: fit-content;
+                max-width: max-content;
+                border-radius: 5em;
+            }
+        }
+        
+        .dot6 {
+            position: relative;
+            top: -6em;
+            margin-right: 2em;
+        }
+        
+        #resturant-knife {
+            height: 1.3em;
+            position: absolute;
+            margin-block: 1.5em;
+            margin-left: 0.5em;
+        }
+        
+        #yields {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 10px;
+            text-transform: uppercase;
+            color: #BDBDBD;
+            margin-left: 3em;
+            margin-top: 2.5em;
+            list-style: none;
+        }
+        
+        #yields>span {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 12px;
+            color: #F2994A;
+        }
+        /* .carder,
+        .card  */
+        
+        aside {
+            position: relative;
+            /* border: 2px solid purple; */
+            display: inline-block;
+            margin: auto;
+        }
+        
+        .card img {
+            height: 1em;
+            position: absolute;
+            margin-left: -1.5em;
+        }
+        
+        .card {
+            display: inline-flex;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 12px;
+            justify-items: auto;
+            margin-block: 1.5em;
+            color: #BDBDBD;
+            max-width: max-content;
+            gap: 6.5em;
+            margin-left: 2em;
+        }
+        
+        input {
+            position: relative;
+            border: 1px solid #828282;
+            border-radius: 4px;
+        }
+        
+        .card>li>a>span {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 12px;
+            color: #333333;
+            list-style: none;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        
+        .text-main {
+            margin-block: 0.8em;
+            font-family: 'Playfair';
+            font-style: normal;
+            font-size: 18px;
+            color: #333333;
+            line-height: 30px;
+            font-weight: 700;
+        }
+        
+        .text-mainSub {
+            margin-block: 0.5em;
+            font-family: 'Playfair';
+            font-style: italic;
+            font-size: 18px;
+            color: #333333;
+            line-height: 25px;
+            font-weight: 200;
+        }
+        
+        .firstUL,
+        .secondUL a {
+            font-family: 'Montserrat';
+            max-width: 100%;
+            font-stretch: ultra-expanded;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 20px;
+            /* color: #333333; */
+            line-height: 20px;
+        }
+        
+        ul {
+            counter-reset: step;
+            margin-left: 1.5em;
+        }
+        
+        .thirdUL li:before {
+            counter-increment: step;
+            content: counter(step);
+            border: 2px solid orange;
+            border-radius: 3px;
+            background-color: orange;
+            color: #FFFFFF;
+            margin-left: -1.1em;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            border-width: 5px;
+            line-height: 32px;
+        }
+        
+        .thirdUL a p {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 15px;
+            color: #333333;
+            line-height: 150%;
+            margin-left: 0.8em;
+            margin-top: -2em;
+            text-decoration: none;
+            list-style: none;
+        }
+        
+        span {
+            font-weight: 900;
+        }
+        
+        .websiteLink {
+            font-family: 'Montserrat';
+            font-style: italic;
+            font-weight: s400;
+            font-size: 14px;
+            line-height: 150%;
+            color: #BDBDBD;
+            margin-top: 10%;
+            margin-left: 12px;
+        }
+        
+        footer {
+            margin-top: 25%;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            color: #828282;
+        }
+        
+        @media screen and (min-width: 640px) {
+            body {
+                margin-left: 15%;
+                max-width: 100%;
+            }
+            h4.classic {
+                font-family: 'Playfair Display';
+                font-style: normal;
+                color: #000000;
+                font-size: 47px;
+                line-height: 64px;
+                font-weight: 700;
+                /* margin-left: 5em; */
+            }
+            section {
+                font-family: 'Montserrat';
+                font-size: 17px;
+                font-stretch: ultra-expanded;
+                line-height: 20px;
+                font-style: italic;
+                /* margin-block: 20px; */
+                /* margin-left: 15em; */
+                color: #4F4F4F;
+                max-width: max-content;
+            }
+            #img1 {
+                max-width: 89%;
+                max-height: auto;
+                border-radius: 2em;
+                object-fit: fill;
+                aspect-ratio: inherit
+            }
+            .dot6 {
+                position: relative;
+                top: -6em;
+                /* margin-left: 15em; */
+            }
+            #yields {
+                /* display: block; */
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 10px;
+                line-height: 10px;
+                text-transform: uppercase;
+                color: #BDBDBD;
+                margin-left: 3em;
+                margin-top: 2em;
+            }
+            .card img {
+                height: 2em;
+                width: 2em;
+                /* position: absolute; */
+                margin-inline: -2em;
+                margin-block: -0.5em;
+            }
+            aside {
+                position: absolute;
+                display: block;
+                width: 17%;
+                height: 52%;
+                left: 72%;
+                top: 110%;
+                background: #FFFFFF;
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+                border-radius: 12px;
+            }
+            aside .card {
+                position: absolute;
+                display: block;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 12px;
+                justify-content: space-between;
+                color: #BDBDBD;
+                width: 70%;
+                margin-left: 20%;
+                padding: 15px;
+                /* column-gap: 32px; */
+                height: 15em;
+            }
+            #mins45 {
+                height: 20em;
+                width: 40em;
+                height: 1em;
+                font-size: 14px;
+                position: relative;
+                margin-left: 0.5em;
+                line-height: 152%;
+                margin-top: 5em;
+                margin-block: 9em;
+                row-gap: 20px;
+            }
+            #yields {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 10px;
+                text-transform: uppercase;
+                color: #BDBDBD;
+                margin-left: 3em;
+                margin-top: 3em;
+                list-style: none;
+            }
+            aside #resturant-knife {
+                margin-top: 3em;
+                margin-left: 1em;
+            }
+            #yields>span {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 12px;
+                color: #F2994A;
+                margin-block: 6em;
+                list-style: none;
+            }
+            p.text-main {
+                margin-block: 1em;
+                font-family: 'Playfair';
+                font-style: normal;
+                font-size: 27px;
+                color: #333333;
+                line-height: 30px;
+                font-weight: 700;
+            }
+            .text-mainSub {
+                margin-top: 80%;
+                margin: 1.5em;
+                font-family: 'Playfair';
+                font-style: italic;
+                font-size: 20px;
+                color: #333333;
+                line-height: 27px;
+                font-weight: 200;
+            }
+            .firstUL,
+            .secondUL a {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 25px;
+                color: #333333;
+            }
+            input {
+                margin: 0.5em;
+                margin-block: 1em;
+                border-radius: 4px;
+                max-width: 40em;
+            }
+            .thirdUL li:before {
+                counter-increment: step;
+                content: counter(step);
+                border: 2px solid orange;
+                border-radius: 3px;
+                background-color: orange;
+                color: #FFFFFF;
+                margin-left: -1.1em;
+                font-family: 'Playfair Display';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                border-width: 5px;
+                line-height: 32px;
+            }
+            .thirdUL a p {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                color: #333333;
+                line-height: 150%;
+                margin-left: 1em;
+                margin-top: -1.2em;
+                text-decoration: none;
+                list-style: none;
+            }
+            .websiteLink {
+                font-family: 'Montserrat';
+                font-style: italic;
+                font-weight: s400;
+                font-size: 14px;
+                line-height: 150%;
+                color: #BDBDBD;
+                margin-top: 10%;
+                margin-left: 12px;
+            }
+            .websiteLink {
+                font-family: 'Montserrat';
+                font-style: italic;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+                color: #BDBDBD;
+                margin-top: 10%;
+                margin-left: 12px;
+            }
+            footer {
+                margin-top: 10%;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+                color: #828282;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class='container'>
+        <h4 class="classic">
+            Classic Cheesecake Recipe
+        </h4>
+        <section class='section'>Look no furthe for a creamy and Ultra smooth <br> classic cheesecake recipe! Paired with a buttery<br> graham cracker crust, no one can deny its simple<br> decadence. For the best result, bake in a water bath
+        </section>
+        <div class='dot6'>
+            <img src="Assets/6dots.svg" alt="6dots" />
+        </div>
+        <div id='img1'>
+            <img src=" /Assets/photo1.png" alt="cheeseCake" height='40' />
+        </div>
+        <!-- <div>
+            <img src="Assets/restaurant_menu_.svg" alt="6dots" id="resturant-knife" id="images1" />
+        </div> -->
+
+        <aside class='carder'>
+            <!-- <p id="yields">YIELDS
+                </br><span>12 servings</span>
+            </p> -->
+            <div>
+                <img src="Assets/restaurant_menu_.svg" alt="6dots" id="resturant-knife" id="images1" />
+            </div>
+            <li id="yields">YIELDS
+                </br><span>12 servings</span>
+            </li>
+
+            <ul class='card'>
+                <li> <img src="Assets/alarm_FILL0_wght400_GRAD0_opsz48.svg" alt="alarmClock" id="alarm-clock" />Prep Time<br/><a><span id="mins45">45 Mins</span></a></li>
+
+                <li><img src="Assets/alarm_FILL0_wght400_GRAD0_opsz48.svg" alt="alarmClock" id="alarm-clock" />Cook Time<br/><a><span id="mins45">1 hour</span></a></li>
+
+                <li><img src="Assets/alarm_FILL0_wght400_GRAD0_opsz48.svg" alt="alarmClock" id="alarm-clock" />Total Time<br/><a><span id="mins45">7,75 hour</span></a></li>
+            </ul>
+        </aside>
+        <div>
+            <p class="text-main">Ingredients</p>
+            <p class="text-mainSub">Graham Cracker Crust</p>
+            <ul class="firstUL">
+                <li>
+                    <input type="checkbox" />
+                    <a>
+                        1 and1/2cups (150g) <span>graham cracker crumbs</span><br/>(about 10 full sheet graham cracker)
+                    </a>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <a>5 Tablespoons(70g) <span>unsalted butter melted</span></a>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <a>1/4 cup(50g)<span>granular sugar</span></a>
+                </li>
+            </ul>
+        </div>
+        <p class="text-mainSub">Cheesecake</p>
+        <ul class="secondUL">
+            <li>
+                <input type="checkbox" />
+                <a>Four 8-ounce blocks (904g) full-fat <span>cream <br/>cheese,</span>softened to room temperature</a>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <a>1 cup (200g) <span>granulated sugar</span></a>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <a>1 cup (240g) full-fat <span>sour cream,</span> at room temperature</a>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <a>1 teaspoon <span>pure vanilla extract</span></a>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <a>2 teaspoons<span>fresh lemon juice</span> (optional , butrecommended)</a>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <a>3 large<span>eggs</span>at room temperature</a>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <a>topping suggestions:<span>salted caramel, lemon, curd, strawberry toppings chocolate ganache,
+                    red wine chocolate ganache, fresh fruit, whipped cream, or raspberry sauce
+                </span> (recipein notes)</a>
+            </li>
+
+        </ul>
+        <div>
+            <p class="text-main">Instructions</p>
+            <ul class="thirdUL">
+                <li>
+                    <a>
+                        <p>
+                            Adjust the oven rack to the lower-middle position and preheat oven to 350°F(177°C)
+                        </p>
+                    </a>
+                </li>
+
+                <li>
+                    <a>
+                        <p>
+                            <span>Make the crust:</span>Using a food</b> processor, pulse the graham crackers into crumbs. Pour into a medium bowl and stirin sugarand melted</b> butter until combined. (You can also</b> pulse it all together in the food</b>
+                            processor). Mixture will be sandy.</b> Press firmly into the bottom and</b> slightly up to the sidesof a 9-inch or</b> 10-inch springform pan. No need to</b> grease the pan first. I use the bottom</b> of a measuring cup to
+                            pack the crust
+                            </b>
+                            down tightly. Pre-bake for 8 minutes.</b>
+                            Remove from the oven and place the</b> hot pan on a large piece of<br>aluminium foil. The foil wil wrap</b> around the pan for the water bath in</b>
+                            step 4. Allow crust to slightly cool as you prepare the filling.
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <p>
+                            <span>Make the filling:</span> Using a</b> handheld or stand mixer fitted</b> with a paddle attachment, beat the cream cheese and granulated</b>
+                            sugar together on medium-high</b>speed in a large bowl until the</b> mixture is smooth and creamy,</b>about 2 minutes, and lemon juice then beat until fully</b>
+                            combines. On medium speed, add the eggs one at a time,</b> beating after each addition until</b>just blended.After the final egg is</b> incorporated into the batter, stop</b>
+                            mixing. To help prevent the cheesecake from deflating and cracking as it cools, avoid over-mixing the batter as best you can
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <p>
+                            <span>Prepare the simple water bath(see note)</span> Boil a pot of water.</b> You need 1 inch of water in your roasting</b> pan for the water bath, so make sure</b> you boil enough. I use an entire kettle of hot water. As the
+                            water is heating up, wrap the aluminium foil around the springform pan. Pour</b> the cheescake batter on top of the</b> crust. Use a rubber spatula or spoon</b>
+                            to smooth it into an even layer. Place</b> the pan inside of a large roasting</b> pan. Carefully pour the hot water</b> inside of the pan and place in the</b> oven. (Or you can place the roasting</b>
+                            pan in the oven first, then pour the hot water in. Whichever is easier for you.)
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <p>
+                            Bake cheesecake for 55-70 minutes</b> or until the center is almost set.</b>When it's done, the center of the</b>cheesecake will slightly wobble if</b>you gently shake the pan. Turn the</b> oven off and open the oven door</b>
+                            slightly. Let the cheesecake sit in</b>
+                            the oven in the water bath as it</b> cools down for 1hour. Remove</b>from the oven and water bath,</b> then cool cheesecake completely</b>at room temperature. Then</b>refrigerate the cheesecake for at</b> least 4 hours or overnight.
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <p>
+                            Use a knife to loosen the chilled</b>cheesecake from the rim of the</b> springform pan, then remove the</b> rim. Using a clean sharp knife, cut</b>into slices for serving. For neat</b> slices, wipe the knife clean and dip</b>
+                            into warm water between each slice.
+
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <p>
+                            serve cheescake with desired</b>toppings. Cover and store leftover cheescake in the refrigerator for up to 5 days.
+
+                        </p>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <ul class="websiteLink">
+            <span>Source:</span>
+            <li>https://sallybakingaddiction.com/classic-cheesecake/</li>
+        </ul>
+        <footer>created by orjichimaprince - devChallenges.io</footer>
+    </div>
+
+</body>
+
+</html>
